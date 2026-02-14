@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone, TrendingUp } from "lucide-react"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -27,86 +27,107 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center pt-2">
-            <h1 className={`text-lg sm:text-2xl md:text-3xl font-bold transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"}`}>Essence Space</h1>
+          <div className="flex items-center gap-2">
+            <div className={`p-2 rounded-lg ${isScrolled ? "bg-primary" : "bg-white/20"}`}>
+              <TrendingUp className={`w-5 h-5 ${isScrolled ? "text-white" : "text-white"}`} />
+            </div>
+            <div>
+              <h1 className={`text-lg sm:text-xl font-bold transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-white"}`}>
+                GoPlnr
+              </h1>
+              <p className={`text-xs transition-colors duration-300 ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>
+                First Get Ranked, Then Pay!
+              </p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
             >
               Home
             </button>
             <button
-              onClick={() => scrollToSection("about")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              onClick={() => scrollToSection("what-we-do")}
+              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
             >
-              About
+              How It Works
             </button>
             <button
-              onClick={() => scrollToSection("gallery")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              onClick={() => scrollToSection("pricing")}
+              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
             >
-              Gallery
+              Pricing
             </button>
             <button
+              onClick={() => scrollToSection("faq")}
+              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
+            >
+              FAQ
+            </button>
+            <Button 
               onClick={() => scrollToSection("contact")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              className="bg-accent hover:bg-accent/90 text-white font-semibold text-sm px-4 py-2 h-auto"
             >
-              Contact
-            </button>
-            <Button className="bg-primary hover:bg-accent text-white font-semibold text-sm px-4 py-2 h-auto">
               <Phone className="w-4 h-4 mr-2" />
-              Call Now
+              Get Started
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button 
+            className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`} 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-3 bg-card border-t border-border">
-            <div className="flex flex-col gap-2">
+          <div className="md:hidden py-3 bg-white rounded-lg shadow-lg border border-border mt-2">
+            <div className="flex flex-col gap-1">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors font-mono py-2 px-3"
+                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
               >
                 Home
               </button>
               <button
-                onClick={() => scrollToSection("about")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors font-mono py-2 px-3"
+                onClick={() => scrollToSection("what-we-do")}
+                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
               >
-                About
+                How It Works
               </button>
               <button
-                onClick={() => scrollToSection("gallery")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors font-mono py-2 px-3"
+                onClick={() => scrollToSection("pricing")}
+                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
               >
-                Gallery
+                Pricing
               </button>
               <button
-                onClick={() => scrollToSection("contact")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors font-mono py-2 px-3"
+                onClick={() => scrollToSection("faq")}
+                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
               >
-                Contact
+                FAQ
               </button>
-              <Button className="bg-primary hover:bg-accent text-white font-semibold w-full text-sm py-2 h-auto">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
+              <div className="px-3 pt-2">
+                <Button 
+                  onClick={() => scrollToSection("contact")}
+                  className="bg-accent hover:bg-accent/90 text-white font-semibold w-full text-sm py-2 h-auto"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Get Started
+                </Button>
+              </div>
             </div>
           </div>
         )}

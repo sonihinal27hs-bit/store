@@ -3,104 +3,104 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Modern aesthetic color palette for interior design studio */
+/* Professional SEO Services Color Palette - Trust & Growth */
 :root {
   /* Clean white backgrounds */
   --background: oklch(0.99 0.002 0);
-  --foreground: oklch(0.2 0.02 35);
+  --foreground: oklch(0.18 0.02 250);
 
   /* Card colors */
   --card: oklch(0.98 0.003 0);
-  --card-foreground: oklch(0.2 0.02 35);
+  --card-foreground: oklch(0.18 0.02 250);
 
   /* Popover */
   --popover: oklch(0.98 0.003 0);
-  --popover-foreground: oklch(0.2 0.02 35);
+  --popover-foreground: oklch(0.18 0.02 250);
 
-  /* Primary - Modern Teal/Cyan */
-  --primary: oklch(0.5 0.15 200);
+  /* Primary - Professional Deep Blue */
+  --primary: oklch(0.45 0.18 260);
   --primary-foreground: oklch(0.99 0.002 0);
 
-  /* Secondary - Soft Slate */
-  --secondary: oklch(0.65 0.05 200);
+  /* Secondary - Trust Blue */
+  --secondary: oklch(0.55 0.12 250);
   --secondary-foreground: oklch(0.99 0.002 0);
 
   /* Muted tones */
-  --muted: oklch(0.92 0.005 0);
-  --muted-foreground: oklch(0.5 0.02 35);
+  --muted: oklch(0.95 0.008 250);
+  --muted-foreground: oklch(0.45 0.02 250);
 
-  /* Accent - Warm Peach */
-  --accent: oklch(0.75 0.12 50);
-  --accent-foreground: oklch(0.2 0.02 35);
+  /* Accent - Success Green */
+  --accent: oklch(0.55 0.18 145);
+  --accent-foreground: oklch(0.99 0.002 0);
 
   /* Destructive */
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.99 0.002 0);
 
   /* Borders and inputs */
-  --border: oklch(0.92 0.005 0);
-  --input: oklch(0.92 0.005 0);
-  --ring: oklch(0.5 0.15 200);
+  --border: oklch(0.90 0.01 250);
+  --input: oklch(0.95 0.005 250);
+  --ring: oklch(0.45 0.18 260);
 
   /* Charts */
-  --chart-1: oklch(0.5 0.15 200);
-  --chart-2: oklch(0.75 0.12 50);
-  --chart-3: oklch(0.65 0.05 200);
-  --chart-4: oklch(0.7 0.08 150);
-  --chart-5: oklch(0.72 0.1 40);
+  --chart-1: oklch(0.45 0.18 260);
+  --chart-2: oklch(0.55 0.18 145);
+  --chart-3: oklch(0.55 0.12 250);
+  --chart-4: oklch(0.65 0.15 200);
+  --chart-5: oklch(0.6 0.12 300);
 
-  --radius: 0.5rem;
+  --radius: 0.625rem;
 
   /* Sidebar */
   --sidebar: oklch(0.98 0.003 0);
-  --sidebar-foreground: oklch(0.2 0.02 35);
-  --sidebar-primary: oklch(0.5 0.15 200);
+  --sidebar-foreground: oklch(0.18 0.02 250);
+  --sidebar-primary: oklch(0.45 0.18 260);
   --sidebar-primary-foreground: oklch(0.99 0.002 0);
-  --sidebar-accent: oklch(0.92 0.005 0);
-  --sidebar-accent-foreground: oklch(0.2 0.02 35);
-  --sidebar-border: oklch(0.92 0.005 0);
-  --sidebar-ring: oklch(0.5 0.15 200);
+  --sidebar-accent: oklch(0.95 0.008 250);
+  --sidebar-accent-foreground: oklch(0.18 0.02 250);
+  --sidebar-border: oklch(0.90 0.01 250);
+  --sidebar-ring: oklch(0.45 0.18 260);
 }
 
 .dark {
-  --background: oklch(0.15 0.02 35);
+  --background: oklch(0.12 0.02 250);
   --foreground: oklch(0.97 0.003 0);
-  --card: oklch(0.18 0.025 35);
+  --card: oklch(0.16 0.025 250);
   --card-foreground: oklch(0.97 0.003 0);
-  --popover: oklch(0.18 0.025 35);
+  --popover: oklch(0.16 0.025 250);
   --popover-foreground: oklch(0.97 0.003 0);
-  --primary: oklch(0.6 0.18 200);
-  --primary-foreground: oklch(0.15 0.02 35);
-  --secondary: oklch(0.5 0.08 200);
+  --primary: oklch(0.55 0.2 260);
+  --primary-foreground: oklch(0.99 0.002 0);
+  --secondary: oklch(0.45 0.1 250);
   --secondary-foreground: oklch(0.97 0.003 0);
-  --muted: oklch(0.25 0.02 35);
-  --muted-foreground: oklch(0.7 0.01 65);
-  --accent: oklch(0.75 0.15 50);
-  --accent-foreground: oklch(0.15 0.02 35);
+  --muted: oklch(0.22 0.02 250);
+  --muted-foreground: oklch(0.7 0.01 250);
+  --accent: oklch(0.55 0.2 145);
+  --accent-foreground: oklch(0.99 0.002 0);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.97 0.003 0);
-  --border: oklch(0.25 0.02 35);
-  --input: oklch(0.25 0.02 35);
-  --ring: oklch(0.6 0.18 200);
-  --chart-1: oklch(0.6 0.18 200);
-  --chart-2: oklch(0.75 0.15 50);
-  --chart-3: oklch(0.65 0.1 150);
-  --chart-4: oklch(0.7 0.1 200);
-  --chart-5: oklch(0.72 0.12 40);
-  --sidebar: oklch(0.18 0.025 35);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.25 0.02 250);
+  --ring: oklch(0.55 0.2 260);
+  --chart-1: oklch(0.55 0.2 260);
+  --chart-2: oklch(0.55 0.2 145);
+  --chart-3: oklch(0.55 0.12 200);
+  --chart-4: oklch(0.65 0.12 250);
+  --chart-5: oklch(0.6 0.15 300);
+  --sidebar: oklch(0.16 0.025 250);
   --sidebar-foreground: oklch(0.97 0.003 0);
-  --sidebar-primary: oklch(0.6 0.18 200);
-  --sidebar-primary-foreground: oklch(0.15 0.02 35);
-  --sidebar-accent: oklch(0.25 0.02 35);
+  --sidebar-primary: oklch(0.55 0.2 260);
+  --sidebar-primary-foreground: oklch(0.99 0.002 0);
+  --sidebar-accent: oklch(0.22 0.02 250);
   --sidebar-accent-foreground: oklch(0.97 0.003 0);
-  --sidebar-border: oklch(0.25 0.02 35);
-  --sidebar-ring: oklch(0.6 0.18 200);
+  --sidebar-border: oklch(0.25 0.02 250);
+  --sidebar-ring: oklch(0.55 0.2 260);
 }
 
-/* Updated fonts for elegant wedding aesthetic */
+/* Modern professional fonts for SEO services */
 @theme inline {
-  --font-sans: "Playfair Display", "serif";
-  --font-mono: "Inter", "sans-serif";
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-mono: "Inter", "system-ui", "sans-serif";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

@@ -2,20 +2,22 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { Download, LogOut, Phone, User, Home, MapPin, IndianRupee, Calendar } from 'lucide-react'
+import { Download, LogOut, Phone, User, Building, MapPin, FileImage, Calendar, Briefcase, Globe } from 'lucide-react'
 
 const EMAIL = 'dailyleads@gmail.com'
 const PASSWORD = 'DLead@7890'
 const AUTH_KEY = 'leads_auth'
-const LEADS_KEY = 'interior_design_leads'
+const LEADS_KEY = 'seo_service_leads'
 
 interface Lead {
   id: string
   fullName: string
   phoneNumber: string
-  propertyType: string
-  budget: string
-  city: string
+  businessName: string
+  businessCategory: string
+  location: string
+  websiteUrl: string
+  paymentScreenshot: string
   status?: string
   submittedAt: string
 }
@@ -81,13 +83,15 @@ export default function LeadsPage() {
   }
 
   const exportCSV = () => {
-    const headers = ['Full Name', 'Phone', 'Property Type', 'City', 'Budget', 'Status', 'Date']
+    const headers = ['Full Name', 'Phone', 'Business Name', 'Category', 'Location', 'Website', 'Payment Screenshot', 'Status', 'Date']
     const rows = leads.map(l => [
       l.fullName || '',
       l.phoneNumber || '',
-      l.propertyType || '',
-      l.city || '',
-      l.budget || '',
+      l.businessName || '',
+      l.businessCategory || '',
+      l.location || '',
+      l.websiteUrl || '',
+      l.paymentScreenshot || '',
       l.status || 'new',
       new Date(l.submittedAt).toLocaleDateString()
     ])
@@ -96,7 +100,7 @@ export default function LeadsPage() {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'leads.csv'
+    a.download = 'seo-leads.csv'
     a.click()
   }
 
@@ -165,7 +169,7 @@ export default function LeadsPage() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">Interior Design Leads</h1>
+            <h1 className="text-2xl font-bold text-gray-800">Local SEO Service Leads</h1>
             <p className="text-gray-500 text-sm">Total: {leads.length} leads</p>
           </div>
           <div className="flex gap-2">
@@ -219,13 +223,19 @@ export default function LeadsPage() {
                     <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> Phone</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
-                    <div className="flex items-center gap-2"><Home className="w-4 h-4" /> Property</div>
+                    <div className="flex items-center gap-2"><Building className="w-4 h-4" /> Business</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
-                    <div className="flex items-center gap-2"><MapPin className="w-4 h-4" /> City</div>
+                    <div className="flex items-center gap-2"><Briefcase className="w-4 h-4" /> Category</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
-                    <div className="flex items-center gap-2"><IndianRupee className="w-4 h-4" /> Budget</div>
+                    <div className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Location</div>
+                  </th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                    <div className="flex items-center gap-2"><Globe className="w-4 h-4" /> Website</div>
+                  </th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                    <div className="flex items-center gap-2"><FileImage className="w-4 h-4" /> Payment</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">Status</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
@@ -243,13 +253,33 @@ export default function LeadsPage() {
                           {lead.phoneNumber || '—'}
                         </a>
                       </td>
+                      <td className="py-3 px-4">{lead.businessName || '—'}</td>
                       <td className="py-3 px-4">
                         <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium">
-                          {lead.propertyType || '—'}
+                          {lead.businessCategory || '—'}
                         </span>
                       </td>
-                      <td className="py-3 px-4">{lead.city || '—'}</td>
-                      <td className="py-3 px-4">{lead.budget || '—'}</td>
+                      <td className="py-3 px-4">{lead.location || '—'}</td>
+                      <td className="py-3 px-4">
+                        {lead.websiteUrl ? (
+                          <a href={lead.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-xs truncate max-w-[150px] block">
+                            {lead.websiteUrl.replace(/^https?:\/\//, '')}
+                          </a>
+                        ) : (
+                          <span className="text-gray-400 text-xs">No website</span>
+                        )}
+                      </td>
+                      <td className="py-3 px-4">
+                        {lead.paymentScreenshot ? (
+                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-medium">
+                            ✅ Uploaded
+                          </span>
+                        ) : (
+                          <span className="bg-gray-100 text-gray-500 px-2 py-1 rounded text-xs">
+                            None
+                          </span>
+                        )}
+                      </td>
                       <td className="py-3 px-4">
                         <select
                           value={lead.status || 'new'}
@@ -276,7 +306,7 @@ export default function LeadsPage() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={7} className="py-12 text-center text-gray-500">
+                    <td colSpan={9} className="py-12 text-center text-gray-500">
                       <User className="w-12 h-12 mx-auto mb-2 opacity-20" />
                       <p>No leads yet</p>
                       <p className="text-xs">Leads will appear here when customers submit the form</p>

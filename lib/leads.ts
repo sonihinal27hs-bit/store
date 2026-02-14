@@ -4,15 +4,17 @@ export interface Lead {
   id: string
   fullName: string
   phoneNumber: string
-  propertyType: string
-  budget: string
-  city: string
+  businessName: string
+  businessCategory: string
+  location: string
+  websiteUrl: string
+  paymentScreenshot: string
   status: LeadStatus
   submittedAt: string
 }
 
 // Store leads in localStorage
-const LEADS_KEY = "interior_design_leads"
+const LEADS_KEY = "seo_service_leads"
 
 export const getLeads = (): Lead[] => {
   if (typeof window === "undefined") return []
@@ -35,9 +37,11 @@ export const addLead = (lead: Omit<Lead, "id" | "submittedAt" | "status">): Lead
     id: Date.now().toString(),
     fullName: lead.fullName || "",
     phoneNumber: lead.phoneNumber || "",
-    propertyType: lead.propertyType || "",
-    budget: lead.budget || "",
-    city: lead.city || "",
+    businessName: lead.businessName || "",
+    businessCategory: lead.businessCategory || "",
+    location: lead.location || "",
+    websiteUrl: lead.websiteUrl || "",
+    paymentScreenshot: lead.paymentScreenshot || "",
     status: "new",
     submittedAt: new Date().toISOString(),
   }

@@ -1,62 +1,56 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Inter } from "next/font/google"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const playfairDisplay = Playfair_Display({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 })
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-})
-
 export const metadata: Metadata = {
-  title: "Premium Interior Design Studio in Vadodara | DesignStudio - Transform Your Space",
+  title: "GoPlnr | First Get Ranked on Google, Then Pay - Zero Upfront Fees",
   description:
-    "DesignStudio - Award-winning interior design studio in Vadodara. Expert residential, commercial & office interior design. 20+ years experience, 500+ projects. Modern, luxury & minimalist designs. Free consultation & 3D visualization.",
+    "First get ranked on Google's first page, then pay us. Just ₹1,000 refundable deposit. Pay ₹24,000 only after ranking. No upfront fees. 30-day guarantee. Local SEO for all businesses.",
   keywords:
-    "interior design Vadodara, home interior design, office interior design, commercial interiors, space planning, interior decorator Vadodara, home renovation Vadodara, luxury interiors, modern design, interior styling, furniture design, kitchen design, bedroom interior, living room design, interior design services, best interior designer Vadodara",
-  authors: [{ name: "DesignStudio Interior Design Vadodara" }],
-  creator: "DesignStudio Interior Design",
-  publisher: "DesignStudio Interior Design",
+    "local SEO services, SEO services India, Google ranking, Google Maps ranking, local business SEO, digital marketing, website SEO optimization, local search optimization, SEO company, best SEO services, goplnr",
+  authors: [{ name: "GoPlnr" }],
+  creator: "GoPlnr",
+  publisher: "GoPlnr",
   formatDetection: {
     email: false,
     address: true,
     telephone: true,
   },
-  metadataBase: new URL("https://designstudiovadodara.com"),
+  metadataBase: new URL("https://goplnr.com"),
   alternates: {
-    canonical: "https://designstudiovadodara.com",
+    canonical: "https://goplnr.com",
   },
   openGraph: {
-    title: "Premium Interior Design Studio in Vadodara | DesignStudio",
+    title: "GoPlnr | First Get Ranked on Google, Then Pay",
     description:
-      "Transform your space with DesignStudio - Vadodara's premier interior design studio. Residential, commercial & office design with 20+ years expertise.",
-    url: "https://designstudiovadodara.com",
-    siteName: "DesignStudio",
+      "First get ranked, then pay. Just ₹1,000 deposit. Pay ₹24,000 only after ranking. Zero upfront fees. 30-day guarantee.",
+    url: "https://goplnr.com",
+    siteName: "GoPlnr - Local SEO Services",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://designstudiovadodara.com/og-image.jpg",
+        url: "https://goplnr.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "DesignStudio - Premium Interior Design in Vadodara",
+        alt: "GoPlnr - Rank Your Business on Google",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium Interior Design in Vadodara | DesignStudio",
-    description: "Expert interior design for homes, offices & commercial spaces. Transform your space today!",
-    images: ["https://designstudiovadodara.com/og-image.jpg"],
-    creator: "@designstudio",
+    title: "GoPlnr | First Get Ranked, Then Pay",
+    description: "First get ranked on Google, then pay. ₹1,000 deposit. Pay ₹24,000 only after ranking. Zero upfront fees!",
+    images: ["https://goplnr.com/og-image.jpg"],
+    creator: "@goplnr",
   },
   robots: {
     index: true,
@@ -106,77 +100,48 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://designstudiovadodara.com/#organization",
-        name: "DesignStudio",
-        image: "https://designstudiovadodara.com/logo.png",
-        description: "Premium Interior Design Studio in Vadodara - Expert residential, commercial & office interior design services",
-        url: "https://designstudiovadodara.com",
-        telephone: "+919876543210",
-        email: "info@designstudio.com",
+        "@id": "https://localseoservices.com/#organization",
+        name: "Local SEO Services",
+        image: "https://localseoservices.com/logo.png",
+        description: "Local SEO services for businesses. One-time investment, pay after ranking. Specializing in website SEO and local search optimization. 30-day ranking guarantee.",
+        url: "https://localseoservices.com",
+        telephone: "+916353583148",
+        email: "hello@localseo.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "DesignStudio Office",
-          addressLocality: "Vadodara",
-          addressRegion: "GJ",
-          postalCode: "390001",
           addressCountry: "IN",
         },
         sameAs: [
-          "https://www.facebook.com/designstudio",
-          "https://www.instagram.com/designstudio",
-          "https://www.youtube.com/designstudio",
+          "https://www.facebook.com/localseoservices",
+          "https://www.instagram.com/localseoservices",
         ],
-        priceRange: "$$$",
+        priceRange: "₹₹",
         serviceArea: {
-          "@type": "City",
-          name: "Vadodara",
+          "@type": "Country",
+          name: "India",
         },
-        areaServed: ["Alkapuri", "Thaltej", "Gotri", "Makarpura", "Akota", "Sama", "Vasna", "Manjalpur"],
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://designstudiovadodara.com/#organization",
-        name: "DesignStudio",
-        url: "https://designstudiovadodara.com",
-        logo: "https://designstudiovadodara.com/logo.png",
-        foundingDate: "2004",
-        founders: [{ "@type": "Person", name: "Design Team" }],
-        knowsAbout: [
-          "Interior Design",
-          "Home Design",
-          "Office Interior Design",
-          "Commercial Interior Design",
-          "Space Planning",
-          "Furniture Design",
-        ],
       },
       {
         "@type": "Service",
-        "@id": "https://designstudiovadodara.com/#service-residential",
-        name: "Residential Interior Design",
-        description: "Professional residential interior design services including space planning, 3D visualization, and complete project management",
+        "@id": "https://localseoservices.com/#service-localseo",
+        name: "Local SEO Services",
+        description: "Complete local SEO package including website SEO, local citations, backlink building, and Google Maps ranking. 30-day guarantee.",
         provider: {
-          "@id": "https://designstudiovadodara.com/#organization",
+          "@id": "https://localseoservices.com/#organization",
         },
-        areaServed: "Vadodara",
-        priceRange: "$$$",
-      },
-      {
-        "@type": "Service",
-        "@id": "https://designstudiovadodara.com/#service-commercial",
-        name: "Commercial Interior Design",
-        description: "Expert commercial and office interior design with brand integration and complete installation supervision",
-        provider: {
-          "@id": "https://designstudiovadodara.com/#organization",
+        areaServed: "India",
+        offers: {
+          "@type": "Offer",
+          price: "25000",
+          priceCurrency: "INR",
+          description: "One-time Local SEO package - Pay after ranking - 30 day guarantee",
         },
-        areaServed: "Vadodara",
-        priceRange: "$$$$",
       },
       {
         "@type": "AggregateRating",
-        "@id": "https://designstudiovadodara.com/#rating",
-        ratingValue: "4.8",
-        ratingCount: "250",
+        "@id": "https://localseoservices.com/#rating",
+        ratingValue: "4.9",
+        ratingCount: "50",
         bestRating: "5",
         worstRating: "1",
       },
@@ -184,7 +149,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"

@@ -1,56 +1,65 @@
 "use client"
 
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube } from "lucide-react"
+import { MapPin, Phone, Mail, TrendingUp, Facebook, Instagram, Linkedin } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-3 sm:px-4 py-8 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 mb-8 md:mb-0">
+    <footer className="bg-foreground text-white">
+      <div className="container mx-auto px-3 sm:px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-3xl font-bold mb-4 text-accent">Essence Space</h3>
-            <p className="text-primary-foreground/80 font-mono leading-relaxed mb-6">
-              {
-                "Vadodara's premier interior design studio. Transforming spaces into beautiful, functional environments since 2004."
-              }
+            <div className="flex items-center gap-2 mb-4">
+              <div className="p-2 rounded-lg bg-primary">
+                <TrendingUp className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-xl font-bold">GoPlnr</h3>
+            </div>
+            <p className="text-white/70 leading-relaxed">
+              First get ranked on Google, then pay. Zero upfront fees. 30-day guarantee.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors"
               >
-                <Youtube className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="space-y-3">
-              {["Home", "About Us", "Gallery", "Packages", "Contact"].map((link) => (
-                <li key={link}>
+              {[
+                { label: "Home", id: "home" },
+                { label: "How It Works", id: "what-we-do" },
+                { label: "Pricing", id: "pricing" },
+                { label: "FAQ", id: "faq" },
+                { label: "Contact", id: "contact" },
+              ].map((link) => (
+                <li key={link.id}>
                   <button
                     onClick={() => {
-                      const element = document.getElementById(link.toLowerCase().replace(" ", "-"))
+                      const element = document.getElementById(link.id)
                       element?.scrollIntoView({ behavior: "smooth" })
                     }}
-                    className="text-primary-foreground/80 hover:text-accent transition-colors font-mono"
+                    className="text-white/70 hover:text-accent transition-colors"
                   >
-                    {link}
+                    {link.label}
                   </button>
                 </li>
               ))}
@@ -59,79 +68,61 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Our Services</h4>
-            <ul className="space-y-3 text-primary-foreground/80 font-mono">
-              <li>Residential Interior Design</li>
-              <li>Office & Commercial Design</li>
-              <li>Space Planning & Layout</li>
-              <li>3D Visualization</li>
-              <li>Furniture & Material Selection</li>
-              <li>Complete Project Management</li>
+            <h4 className="text-lg font-bold mb-4">Our Services</h4>
+            <ul className="space-y-3 text-white/70">
+              <li>Local SEO</li>
+              <li>Google Maps Ranking</li>
+              <li>Website SEO</li>
+              <li>Local Citations</li>
+              <li>Backlink Building</li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Contact Us</h4>
+            <h4 className="text-lg font-bold mb-4">Contact Us</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-primary-foreground/80 font-mono">
-                    Essence Space Office,
-                    <br />
-                    Vadodara, Gujarat – 390001, India
-                  </p>
-                </div>
+                <p className="text-white/70">
+                  India (Remote Services)
+                </p>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="tel:+919876543210"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors font-mono"
+                  href="tel:+916353583148"
+                  className="text-white/70 hover:text-accent transition-colors"
                 >
-                  +91 98765 43210
+                  +91 63535 83148
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="mailto:info@designstudio.com"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors font-mono"
+                  href="mailto:hello@goplnr.com"
+                  className="text-white/70 hover:text-accent transition-colors"
                 >
-                  info@designstudio.com
+                  hello@goplnr.com
                 </a>
               </div>
-
-              {/* Removed timings section */}
             </div>
           </div>
         </div>
 
-        {/* Service Areas */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
-          <h4 className="text-xl font-bold mb-4 text-center">Interior Design Services - All Areas of Vadodara</h4>
-          <p className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed">
-            Covering residential and commercial projects across Vadodara's premium localities including Alkapuri, Thaltej, Gotri, Makarpura, Akota, Sama, Vasna, Manjalpur, Gamdevi, and surrounding areas
-          </p>
-          <p className="text-center text-accent font-mono text-sm mt-3">
-            ✓ Residential Interior Design | ✓ Office & Commercial Spaces | ✓ Complete Project Management
-          </p>
-        </div>
-
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
+        <div className="mt-8 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/80 font-mono text-sm text-center md:text-left">
-              © 2025 Essence Space. All rights reserved. | Jaipur's Premier Interior Design Studio
+            <p className="text-white/60 text-sm text-center md:text-left">
+              © 2026 GoPlnr. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm font-mono">
-              <a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="text-white/60 hover:text-accent transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
+              <a href="#" className="text-white/60 hover:text-accent transition-colors">
                 Terms of Service
               </a>
             </div>
@@ -141,7 +132,7 @@ export function Footer() {
 
       {/* SEO Keywords (hidden) */}
       <div className="sr-only">
-        Interior design Jaipur, home design, office design, commercial interiors, space planning, interior decorator, home renovation, luxury interiors, modern design, interior styling, furniture design, kitchen design, bedroom design, living room design
+        Local SEO services, Google ranking, SEO services India, Google Maps ranking, local business SEO, digital marketing, website SEO optimization, local search optimization
       </div>
     </footer>
   )

@@ -5,44 +5,44 @@ import { useState } from "react"
 
 const faqs = [
   {
-    question: "What services does Essence Space offer?",
+    question: "How long does it take to rank on Google?",
     answer:
-      "Essence Space provides comprehensive interior design services including residential interior design, office design, commercial interiors, space planning, 3D visualization, furniture design, and complete project management for homes, offices, and commercial spaces in Vadodara.",
+      "Local SEO typically takes 2-4 months to show significant results. For less competitive keywords, you may see results in as little as 4-6 weeks. For highly competitive terms, it may take 4-6 months. We focus on realistic expectations, not fake promises.",
   },
   {
-    question: "How much does interior design cost in Vadodara?",
+    question: "What if I don't rank? Do I still have to pay?",
     answer:
-      "Our pricing is transparent and tailored to your needs. We offer packages starting from ₹99,999 for single room makeovers to custom quotes for luxury commercial projects. All packages include professional consultation and 3D visualization.",
+      "No. Our model is simple — you pay only after you see yourself ranking on Google for your target keywords. If we don't deliver results, you don't pay. This keeps us accountable and removes your risk completely.",
   },
   {
-    question: "Do you provide 3D visualization before execution?",
+    question: "Is this suitable for my business?",
     answer:
-      "Yes! We provide advanced 3D visualization and walk-through for all our premium and commercial packages. This helps you see the design before any execution begins, ensuring complete satisfaction.",
+      "If you have a local business and your customers search for your services on Google, then yes — Local SEO will help you. This works for shops, clinics, restaurants, professionals, service providers, coaching centres, and virtually any local business.",
   },
   {
-    question: "What is your project timeline?",
+    question: "Why one-time payment instead of monthly fees?",
     answer:
-      "Project timelines vary based on project size and complexity. Our basic makeover takes 3 weeks, premium home design takes 6-8 weeks, and commercial projects have customized timelines. We ensure quality without rushing.",
+      "Most of the heavy SEO work happens in the first 3-6 months. After that, your rankings typically maintain themselves with minimal effort. We believe in one-time payment because it's honest — you shouldn't keep paying monthly for work done once. Enjoy long-term results!",
   },
   {
-    question: "Do you handle installation and project management?",
+    question: "Do I need a website for SEO?",
     answer:
-      "Absolutely! We provide complete project management, installation supervision, and on-site support. Our team ensures every detail is executed to perfection according to the approved design.",
+      "Yes, a website is essential for our SEO services. We optimize your website content, structure, and technical aspects to help you rank on Google. If your current website needs improvement, we include a free redesign as part of our package.",
   },
   {
-    question: "Are you available for interior design in all areas of Vadodara?",
+    question: "Can you guarantee #1 ranking on Google?",
     answer:
-      "Yes, we serve all premium areas of Vadodara including Alkapuri, Thaltej, Gotri, Makarpura, Akota, Sama, Vasna, Manjalpur, and surrounding localities. We also offer services across Gujarat.",
+      "No honest SEO professional can guarantee #1 ranking — Google's algorithm is controlled by Google, not us. What we CAN guarantee is our best effort, proven strategies, and our pay-after-ranking model which ensures you only pay for actual results.",
   },
   {
-    question: "Can you design both modern and traditional interiors?",
+    question: "What keywords will I rank for?",
     answer:
-      "Yes, our award-winning designers specialize in multiple styles including modern, minimalist, traditional, luxury, and fusion designs. We customize every design to match your lifestyle and preferences.",
+      "We target keywords your potential customers are actually searching for, like '[your service] in [your city]'. During our consultation, we'll research and discuss the most valuable keywords for your specific business.",
   },
   {
-    question: "How do I get started with Essence Space?",
+    question: "How do I get started?",
     answer:
-      "Getting started is easy! Contact us via WhatsApp, phone, or fill our online form. We'll schedule a free consultation to understand your vision, space, and budget, then propose the best design solution for you.",
+      "Simple! Click the WhatsApp button or fill out the form on this page. We'll have a quick chat to understand your business, do a free SEO analysis, and tell you exactly how we can help. No commitment required for the consultation.",
   },
 ]
 
@@ -50,15 +50,15 @@ export function FAQSection() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0)
 
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section id="faq" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-accent font-mono uppercase tracking-wider mb-4">FAQ</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-            Frequently Asked Questions About Interior Design
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <p className="text-accent font-semibold uppercase tracking-wider mb-3 text-sm">FAQ</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+            Frequently Asked Questions About Local SEO
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed font-mono">
-            Find answers to common questions about our interior design services in Vadodara
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Got questions? We've got clear, honest answers.
           </p>
         </div>
 
@@ -81,8 +81,8 @@ export function FAQSection() {
               </button>
 
               {expandedIndex === index && (
-                <div className="px-6 py-4 border-t border-border bg-background">
-                  <p className="text-muted-foreground leading-relaxed font-mono">{faq.answer}</p>
+                <div className="px-6 py-4 border-t border-border bg-muted/30">
+                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
