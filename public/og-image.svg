@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1e3a5f"/>
+  
+  <!-- Background pattern -->
+  <circle cx="100" cy="100" r="200" fill="#22c55e" fill-opacity="0.1"/>
+  <circle cx="1100" cy="530" r="300" fill="#22c55e" fill-opacity="0.1"/>
+  
+  <!-- Logo icon -->
+  <g transform="translate(500, 150)">
+    <rect width="200" height="200" rx="40" fill="#22c55e"/>
+    <path d="M50 125L85 90L115 120L150 75" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M130 75H150V95" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white">GoPlnr</text>
+  <text x="600" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#22c55e">First Get Ranked, Then Pay!</text>
+  <text x="600" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="white" fill-opacity="0.7">Local SEO Services | goplnr.com</text>
+</svg>
