@@ -11,6 +11,7 @@ export interface Product {
   gradient: string
   material: string
   weight: string
+  image: string
 }
 
 export const products: Product[] = [
@@ -33,6 +34,7 @@ export const products: Product[] = [
     gradient: "from-[#faf6f0] to-[#f5e6cc]",
     material: "22K Yellow Gold",
     weight: "4.2 gm",
+    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
   },
   {
     slug: "luna-pendant-necklace",
@@ -53,6 +55,7 @@ export const products: Product[] = [
     gradient: "from-[#f0e8dc] to-[#e8d5b8]",
     material: "18K Rose Gold",
     weight: "5.8 gm",
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
   },
   {
     slug: "etoile-drop-earrings",
@@ -73,6 +76,7 @@ export const products: Product[] = [
     gradient: "from-[#faf6f0] to-[#e8e3dc]",
     material: "18K White Gold",
     weight: "3.6 gm",
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
   },
   {
     slug: "serpentine-bracelet",
@@ -93,6 +97,7 @@ export const products: Product[] = [
     gradient: "from-[#f5e6cc] to-[#f0e8dc]",
     material: "22K Yellow Gold",
     weight: "8.1 gm",
+    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
   },
   {
     slug: "aria-diamond-studs",
@@ -113,6 +118,7 @@ export const products: Product[] = [
     gradient: "from-[#e8e3dc] to-[#faf6f0]",
     material: "18K White Gold + Diamond",
     weight: "2.4 gm",
+    image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
   },
   {
     slug: "riviere-chain",
@@ -133,6 +139,7 @@ export const products: Product[] = [
     gradient: "from-[#f0e8dc] to-[#f5e6cc]",
     material: "18K Yellow Gold + Lab Diamond",
     weight: "9.3 gm",
+    image: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80",
   },
   {
     slug: "halo-engagement-ring",
@@ -153,6 +160,7 @@ export const products: Product[] = [
     gradient: "from-[#faf6f0] to-[#e8d5b8]",
     material: "18K White Gold + Diamond",
     weight: "4.8 gm",
+    image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80",
   },
   {
     slug: "pearl-cuff-bracelet",
@@ -173,6 +181,7 @@ export const products: Product[] = [
     gradient: "from-[#e8e3dc] to-[#f5e6cc]",
     material: "18K Gold-Plated Silver + Pearl",
     weight: "12.5 gm",
+    image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80",
   },
 ]
 

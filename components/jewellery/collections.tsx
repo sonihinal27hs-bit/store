@@ -1,23 +1,21 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const collections = [
   {
     title: "Celestial",
     subtitle: "Inspired by the stars",
-    gradient: "from-[#f5e6cc] to-[#e8d5b8]",
-    accent: "bg-[#b8860b]/10",
+    image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
   },
   {
     title: "Heritage",
     subtitle: "Timeless traditions",
-    gradient: "from-[#e8e3dc] to-[#d4c4a8]",
-    accent: "bg-[#d4af37]/10",
+    image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=80",
   },
   {
     title: "Minimal",
     subtitle: "Everyday luxury",
-    gradient: "from-[#faf6f0] to-[#f0e8dc]",
-    accent: "bg-[#8b7355]/10",
+    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
   },
 ]
 
@@ -44,13 +42,16 @@ export function Collections() {
               href="#products"
               className="group relative overflow-hidden"
             >
-              {/* Placeholder image area */}
-              <div className={`aspect-[3/4] bg-gradient-to-b ${col.gradient} relative`}>
-                <div className={`absolute inset-0 ${col.accent} group-hover:bg-[#b8860b]/5 transition-colors duration-500`} />
-                {/* Decorative element */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity duration-500">
-                  <div className="w-20 h-20 rounded-full border border-[#b8860b]/40" />
-                </div>
+              {/* Collection image */}
+              <div className="aspect-[3/4] relative overflow-hidden">
+                <Image
+                  src={col.image}
+                  alt={`${col.title} collection`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
               </div>
               {/* Label */}
               <div className="py-6 text-center">

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import type { Metadata } from "next"
 import { ArrowLeft, ChevronRight } from "lucide-react"
 import { products, getProductBySlug } from "@/lib/products"
@@ -63,20 +64,20 @@ export default async function ProductPage({
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Left — Product Image */}
           <div>
-            <div className={`aspect-square bg-gradient-to-br ${product.gradient} relative overflow-hidden`}>
+            <div className="aspect-square relative overflow-hidden">
               {product.badge && (
                 <span className="absolute top-4 left-4 bg-[#b8860b] text-white text-[10px] tracking-[0.15em] uppercase px-4 py-1.5 z-10">
                   {product.badge}
                 </span>
               )}
-              {/* Decorative placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="w-40 h-40 sm:w-56 sm:h-56 rounded-full border-2 border-[#b8860b]/25" />
-                  <div className="absolute inset-6 sm:inset-8 rounded-full border border-[#b8860b]/15" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rotate-45 border border-[#b8860b]/30 bg-white/20 backdrop-blur-sm" />
-                </div>
-              </div>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
 
             {/* Thumbnail row */}
@@ -84,11 +85,15 @@ export default async function ProductPage({
               {[0, 1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className={`aspect-square bg-gradient-to-br ${product.gradient} border-2 ${i === 0 ? "border-[#b8860b]" : "border-transparent hover:border-[#e8e3dc]"} cursor-pointer transition-colors`}
+                  className={`aspect-square relative overflow-hidden border-2 ${i === 0 ? "border-[#b8860b]" : "border-transparent hover:border-[#e8e3dc]"} cursor-pointer transition-colors`}
                 >
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-8 h-8 rounded-full border border-[#b8860b]/20" />
-                  </div>
+                  <Image
+                    src={product.image}
+                    alt={`${product.name} view ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="12vw"
+                  />
                 </div>
               ))}
             </div>

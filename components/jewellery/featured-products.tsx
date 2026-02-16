@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Heart, ShoppingBag } from "lucide-react"
 import { useState } from "react"
 import { products } from "@/lib/products"
@@ -32,8 +33,8 @@ export function FeaturedProducts() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Image placeholder */}
-              <div className={`relative aspect-square bg-gradient-to-br ${product.gradient} overflow-hidden mb-4`}>
+              {/* Product image */}
+              <div className="relative aspect-square overflow-hidden mb-4">
                 {/* Badge */}
                 {product.badge && (
                   <span className="absolute top-3 left-3 bg-[#b8860b] text-white text-[10px] tracking-[0.15em] uppercase px-3 py-1 z-10">
@@ -41,11 +42,13 @@ export function FeaturedProducts() {
                   </span>
                 )}
 
-                {/* Decorative jewellery placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-[#b8860b]/20 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute w-8 h-8 sm:w-10 sm:h-10 rotate-45 border border-[#b8860b]/15" />
-                </div>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
 
                 {/* Hover actions */}
                 <div className={`absolute inset-x-0 bottom-0 p-3 flex justify-center gap-2 transition-all duration-300 ${hoveredIndex === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Heart, ChevronRight } from "lucide-react"
 import { products, categories } from "@/lib/products"
 import { Navbar } from "@/components/jewellery/navbar"
@@ -66,17 +67,20 @@ export default function ProductsPage() {
               className="group"
             >
               {/* Image */}
-              <div className={`relative aspect-square bg-gradient-to-br ${product.gradient} overflow-hidden mb-4`}>
+              <div className="relative aspect-square overflow-hidden mb-4">
                 {product.badge && (
                   <span className="absolute top-3 left-3 bg-[#b8860b] text-white text-[10px] tracking-[0.15em] uppercase px-3 py-1 z-10">
                     {product.badge}
                   </span>
                 )}
-                {/* Decorative placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-[#b8860b]/20 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute w-8 h-8 sm:w-10 sm:h-10 rotate-45 border border-[#b8860b]/15" />
-                </div>
+
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
 
                 {/* Wishlist icon */}
                 <button

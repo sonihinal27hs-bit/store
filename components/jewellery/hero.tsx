@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
 export function Hero() {
@@ -40,23 +41,15 @@ export function Hero() {
 
           {/* Image */}
           <div className="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#f5e6cc] via-[#e8d5b8] to-[#d4c4a8]">
-              {/* Decorative jewellery silhouette placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  {/* Ring shape */}
-                  <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full border-[3px] border-[#b8860b]/40" />
-                  <div className="absolute inset-4 sm:inset-6 lg:inset-8 rounded-full border border-[#b8860b]/20" />
-                  {/* Diamond shape */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 rotate-45 border-2 border-[#b8860b]/60 bg-white/30 backdrop-blur-sm" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 rotate-45 bg-[#b8860b]/20" />
-                </div>
-              </div>
-              {/* Subtle sparkle dots */}
-              <div className="absolute top-[20%] right-[25%] w-1.5 h-1.5 bg-[#b8860b]/50 rounded-full" />
-              <div className="absolute bottom-[30%] left-[20%] w-1 h-1 bg-[#d4af37]/60 rounded-full" />
-              <div className="absolute top-[40%] left-[15%] w-2 h-2 bg-[#b8860b]/30 rounded-full" />
-            </div>
+            <Image
+              src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=800&q=80"
+              alt="Luxury gold jewellery collection"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#faf6f0]/20 to-transparent" />
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function BrandStory() {
   return (
     <section className="py-24 bg-white">
@@ -5,15 +7,14 @@ export function BrandStory() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[4/5] bg-gradient-to-br from-[#f5e6cc] via-[#e8d5b8] to-[#d4c4a8] relative overflow-hidden">
-              {/* Decorative goldsmith elements */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="space-y-6 text-center opacity-40">
-                  <div className="w-32 h-px bg-[#b8860b] mx-auto" />
-                  <div className="w-16 h-16 rounded-full border border-[#b8860b]/50 mx-auto" />
-                  <div className="w-32 h-px bg-[#b8860b] mx-auto" />
-                </div>
-              </div>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80"
+                alt="Master goldsmith crafting jewellery"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
             {/* Gold accent border */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#b8860b]/20 -z-10" />
