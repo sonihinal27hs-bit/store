@@ -1,20 +1,21 @@
-export type LeadStatus = "new" | "converted" | "rejected"
+export type LeadStatus = "new" | "contacted" | "converted" | "rejected"
 
 export interface Lead {
   id: string
   fullName: string
   phoneNumber: string
-  businessName: string
-  businessCategory: string
-  location: string
-  websiteUrl: string
-  paymentScreenshot: string
+  city: string
+  serviceType: string
+  message: string
+  email?: string
+  propertyType?: string
+  area?: string
   status: LeadStatus
   submittedAt: string
 }
 
 // Store leads in localStorage
-const LEADS_KEY = "seo_service_leads"
+const LEADS_KEY = "waterproofing_leads"
 
 export const getLeads = (): Lead[] => {
   if (typeof window === "undefined") return []
@@ -22,26 +23,27 @@ export const getLeads = (): Lead[] => {
     const stored = localStorage.getItem(LEADS_KEY)
     if (!stored) return []
     const data = JSON.parse(stored)
-    return Array.isArray(data) ? data.map((lead: any) => ({
+    return Array.isArray(data) ? data.map((lead: Record<string, unknown>) => ({
       ...lead,
-      status: lead.status || "new" // Default to "new" for existing leads
-    })) : []
+      status: (lead.status as LeadStatus) || "new",
+    })) as Lead[] : []
   } catch (error) {
     console.error("Error reading leads:", error)
     return []
   }
 }
 
-export const addLead = (lead: Omit<Lead, "id" | "submittedAt" | "status">): Lead => {
+export const addLead = (lead: Partial<Omit<Lead, "id" | "submittedAt" | "status">>): Lead => {
   const newLead: Lead = {
     id: Date.now().toString(),
     fullName: lead.fullName || "",
     phoneNumber: lead.phoneNumber || "",
-    businessName: lead.businessName || "",
-    businessCategory: lead.businessCategory || "",
-    location: lead.location || "",
-    websiteUrl: lead.websiteUrl || "",
-    paymentScreenshot: lead.paymentScreenshot || "",
+    city: lead.city || "",
+    serviceType: lead.serviceType || "",
+    message: lead.message || "",
+    email: lead.email || "",
+    propertyType: lead.propertyType || "",
+    area: lead.area || "",
     status: "new",
     submittedAt: new Date().toISOString(),
   }
@@ -49,7 +51,7 @@ export const addLead = (lead: Omit<Lead, "id" | "submittedAt" | "status">): Lead
   if (typeof window !== "undefined") {
     try {
       const leads = getLeads()
-      leads.push(newLead)
+      leads.unshift(newLead) // newest first
       localStorage.setItem(LEADS_KEY, JSON.stringify(leads))
     } catch (error) {
       console.error("Error saving lead:", error)
@@ -72,23 +74,12 @@ export const updateLeadStatus = (id: string, status: LeadStatus): void => {
   }
 }
 
-export const getLeadsByMonth = (month: number, year: number) => {
-  const leads = getLeads()
-  return leads.filter((lead) => {
-    const date = new Date(lead.submittedAt)
-    return date.getMonth() === month && date.getFullYear() === year
-  })
-}
-
-export const getLeadsStats = () => {
-  const leads = getLeads()
-  const stats: { [key: string]: number } = {}
-
-  leads.forEach((lead) => {
-    const date = new Date(lead.submittedAt)
-    const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`
-    stats[monthKey] = (stats[monthKey] || 0) + 1
-  })
-
-  return stats
+export const deleteLead = (id: string): void => {
+  if (typeof window === "undefined") return
+  try {
+    const leads = getLeads().filter((lead) => lead.id !== id)
+    localStorage.setItem(LEADS_KEY, JSON.stringify(leads))
+  } catch (error) {
+    console.error("Error deleting lead:", error)
+  }
 }

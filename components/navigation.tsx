@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, TrendingUp } from "lucide-react"
+import { Menu, X, Phone, Droplets, MessageCircle } from "lucide-react"
+import { BUSINESS_INFO } from "@/lib/waterproofing-data"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -33,58 +35,56 @@ export function Navigation() {
       <div className="container mx-auto px-3 sm:px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className={`p-2 rounded-lg ${isScrolled ? "bg-primary" : "bg-white/20"}`}>
-              <TrendingUp className={`w-5 h-5 ${isScrolled ? "text-white" : "text-white"}`} />
+          <Link href="/" className="flex items-center gap-2">
+            <div className={`p-2 rounded-lg ${isScrolled ? "bg-blue-800" : "bg-white/20"}`}>
+              <Droplets className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className={`text-lg sm:text-xl font-bold transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-white"}`}>
-                GoPlnr
-              </h1>
-              <p className={`text-xs transition-colors duration-300 ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>
-                First Get Ranked, Then Pay!
-              </p>
+              <span className={`text-lg sm:text-xl font-bold transition-colors duration-300 block ${isScrolled ? "text-foreground" : "text-white"}`}>
+                {BUSINESS_INFO.name}
+              </span>
+              <span className={`text-xs transition-colors duration-300 block ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>
+                Professional Waterproofing Solutions
+              </span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
-            >
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
+            <Link href="/" className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
               Home
-            </button>
-            <button
-              onClick={() => scrollToSection("what-we-do")}
-              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
+            </Link>
+            <Link href="/waterproofing-in-vadodara" className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
+              Vadodara
+            </Link>
+            <Link href="/terrace-waterproofing-vadodara" className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
+              Services
+            </Link>
+            <Link href="/waterproofing-in-ahmedabad" className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
+              Ahmedabad
+            </Link>
+            <Link href="/waterproofing-in-surat" className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
+              Surat
+            </Link>
+            <Button
+              onClick={() => window.open(`https://wa.me/${BUSINESS_INFO.whatsapp}`, "_blank")}
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold text-sm px-4 py-2 h-auto"
             >
-              How It Works
-            </button>
-            <button
-              onClick={() => scrollToSection("pricing")}
-              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
+              <MessageCircle className="w-4 h-4 mr-1" />
+              WhatsApp
+            </Button>
+            <Button
+              onClick={() => window.open(`tel:${BUSINESS_INFO.displayPhone}`, "_self")}
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm px-4 py-2 h-auto"
             >
-              Pricing
-            </button>
-            <button
-              onClick={() => scrollToSection("faq")}
-              className={`text-sm transition-colors ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
-            >
-              FAQ
-            </button>
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              className="bg-accent hover:bg-accent/90 text-white font-semibold text-sm px-4 py-2 h-auto"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Get Started
+              <Phone className="w-4 h-4 mr-1" />
+              Call Now
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`} 
+          <button
+            className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -95,37 +95,33 @@ export function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden py-3 bg-white rounded-lg shadow-lg border border-border mt-2">
             <div className="flex flex-col gap-1">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
-              >
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md">
                 Home
-              </button>
-              <button
-                onClick={() => scrollToSection("what-we-do")}
-                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
-              >
-                How It Works
-              </button>
-              <button
-                onClick={() => scrollToSection("pricing")}
-                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
-              >
-                Pricing
-              </button>
-              <button
-                onClick={() => scrollToSection("faq")}
-                className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md"
-              >
-                FAQ
-              </button>
-              <div className="px-3 pt-2">
-                <Button 
-                  onClick={() => scrollToSection("contact")}
-                  className="bg-accent hover:bg-accent/90 text-white font-semibold w-full text-sm py-2 h-auto"
+              </Link>
+              <Link href="/waterproofing-in-vadodara" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md">
+                Vadodara Waterproofing
+              </Link>
+              <Link href="/terrace-waterproofing-vadodara" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md">
+                Terrace Waterproofing
+              </Link>
+              <Link href="/waterproofing-in-ahmedabad" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md">
+                Ahmedabad
+              </Link>
+              <Link href="/waterproofing-in-surat" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm text-foreground hover:text-primary hover:bg-muted transition-colors py-3 px-4 rounded-md">
+                Surat
+              </Link>
+              <div className="px-3 pt-2 flex gap-2">
+                <Button
+                  onClick={() => window.open(`https://wa.me/${BUSINESS_INFO.whatsapp}`, "_blank")}
+                  className="bg-green-600 hover:bg-green-700 text-white font-semibold flex-1 text-sm py-2 h-auto"
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Get Started
+                  <MessageCircle className="w-4 h-4 mr-1" /> WhatsApp
+                </Button>
+                <Button
+                  onClick={() => window.open(`tel:${BUSINESS_INFO.displayPhone}`, "_self")}
+                  className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold flex-1 text-sm py-2 h-auto"
+                >
+                  <Phone className="w-4 h-4 mr-1" /> Call
                 </Button>
               </div>
             </div>

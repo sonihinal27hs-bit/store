@@ -12,46 +12,49 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "GoPlnr | First Get Ranked on Google, Then Pay - Zero Upfront Fees",
+  title: {
+    default: "#1 Waterproofing in Vadodara 2026 | ₹25/sqft | 10-Year Warranty | India Waterproofing",
+    template: "%s | India Waterproofing",
+  },
   description:
-    "First get ranked on Google's first page, then pay us. Just ₹1,000 refundable deposit. Pay ₹24,000 only after ranking. No upfront fees. 30-day guarantee. Local SEO for all businesses.",
+    "Vadodara's most trusted waterproofing company ✅ Terrace, roof, basement, bathroom waterproofing ✅ ₹25-80/sqft ✅ 10-year warranty ✅ Free inspection ✅ 500+ projects ✅ 35+ cities. Call +91 94274 56951",
   keywords:
-    "local SEO services, SEO services India, Google ranking, Google Maps ranking, local business SEO, digital marketing, website SEO optimization, local search optimization, SEO company, best SEO services, goplnr",
-  authors: [{ name: "GoPlnr" }],
-  creator: "GoPlnr",
-  publisher: "GoPlnr",
+    "waterproofing services Vadodara, terrace waterproofing Vadodara, roof waterproofing Vadodara, basement waterproofing, bathroom waterproofing, wall waterproofing, waterproofing contractor Vadodara, waterproofing Ahmedabad, waterproofing Surat, waterproofing Anand, waterproofing Bharuch, waterproofing Gujarat, leakage solution Vadodara, dampness treatment, seepage treatment, Dr Fixit waterproofing, best waterproofing company Gujarat, waterproofing near me, waterproofing cost Vadodara, waterproofing price per sq ft",
+  authors: [{ name: "India Waterproofing" }],
+  creator: "India Waterproofing",
+  publisher: "India Waterproofing",
   formatDetection: {
     email: false,
     address: true,
     telephone: true,
   },
-  metadataBase: new URL("https://goplnr.com"),
+  metadataBase: new URL("https://waterproofingvadodara.com"),
   alternates: {
-    canonical: "https://goplnr.com",
+    canonical: "https://waterproofingvadodara.com",
   },
   openGraph: {
-    title: "GoPlnr | First Get Ranked on Google, Then Pay",
+    title: "#1 Waterproofing in Vadodara & Gujarat | ₹25/sqft | 10-Year Warranty",
     description:
-      "First get ranked, then pay. Just ₹1,000 deposit. Pay ₹24,000 only after ranking. Zero upfront fees. 30-day guarantee.",
-    url: "https://goplnr.com",
-    siteName: "GoPlnr - Local SEO Services",
+      "Trusted by 500+ clients ✅ Terrace, roof, basement, bathroom waterproofing ✅ Serving Vadodara, Ahmedabad, Surat & 35+ cities ✅ Free inspection. Call now!",
+    url: "https://waterproofingvadodara.com",
+    siteName: "India Waterproofing",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://goplnr.com/og-image.jpg",
+        url: "https://waterproofingvadodara.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "GoPlnr - Rank Your Business on Google",
+        alt: "India Waterproofing - #1 Waterproofing Company in Vadodara & Gujarat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GoPlnr | First Get Ranked, Then Pay",
-    description: "First get ranked on Google, then pay. ₹1,000 deposit. Pay ₹24,000 only after ranking. Zero upfront fees!",
-    images: ["https://goplnr.com/og-image.jpg"],
-    creator: "@goplnr",
+    title: "#1 Waterproofing in Vadodara | ₹25/sqft | 10-Year Warranty",
+    description: "500+ projects done ✅ Terrace, roof, basement waterproofing ✅ Free inspection ✅ 35+ cities in Gujarat. Call +91 94274 56951",
+    images: ["https://waterproofingvadodara.com/og-image.jpg"],
+    creator: "@indiawaterproofing",
   },
   robots: {
     index: true,
@@ -64,11 +67,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   icons: {
     icon: "/icon.svg",
     apple: "/apple-icon.svg",
@@ -76,6 +74,12 @@ export const metadata: Metadata = {
   verification: {
     google: "googlec1b155cb6acd07f9",
   },
+}
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -86,56 +90,193 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      // === WebSite Schema — enables Google Sitelinks ===
       {
-        "@type": "LocalBusiness",
-        "@id": "https://localseoservices.com/#organization",
-        name: "Local SEO Services",
-        image: "https://localseoservices.com/logo.png",
-        description: "Local SEO services for businesses. One-time investment, pay after ranking. Specializing in website SEO and local search optimization. 30-day ranking guarantee.",
-        url: "https://localseoservices.com",
-        telephone: "+916353583148",
-        email: "hello@localseo.com",
+        "@type": "WebSite",
+        "@id": "https://waterproofingvadodara.com/#website",
+        name: "India Waterproofing",
+        alternateName: "Waterproofing Vadodara",
+        url: "https://waterproofingvadodara.com",
+        description: "Professional waterproofing services in Vadodara and 35+ cities across Gujarat. Terrace, roof, basement, bathroom waterproofing with 10-year warranty.",
+        publisher: {
+          "@id": "https://waterproofingvadodara.com/#organization",
+        },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://waterproofingvadodara.com/?s={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+        inLanguage: "en-IN",
+      },
+      // === Organization / LocalBusiness Schema ===
+      {
+        "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+        "@id": "https://waterproofingvadodara.com/#organization",
+        name: "India Waterproofing",
+        image: "https://waterproofingvadodara.com/logo.svg",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://waterproofingvadodara.com/logo.svg",
+          width: 320,
+          height: 80,
+        },
+        description: "Vadodara's #1 waterproofing company. Professional terrace, roof, basement, bathroom waterproofing with 10-year warranty. Serving 35+ cities in Gujarat. 500+ projects completed.",
+        url: "https://waterproofingvadodara.com",
+        telephone: "+919427456951",
+        email: "info@waterproofingvadodara.com",
+        foundingDate: "2010",
+        numberOfEmployees: {
+          "@type": "QuantitativeValue",
+          minValue: 10,
+          maxValue: 50,
+        },
         address: {
           "@type": "PostalAddress",
+          streetAddress: "Vadodara",
+          addressLocality: "Vadodara",
+          addressRegion: "Gujarat",
+          postalCode: "390001",
           addressCountry: "IN",
         },
-        sameAs: [
-          "https://www.facebook.com/localseoservices",
-          "https://www.instagram.com/localseoservices",
-        ],
-        priceRange: "₹₹",
-        serviceArea: {
-          "@type": "Country",
-          name: "India",
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 22.3072,
+          longitude: 73.1812,
         },
+        sameAs: [
+          "https://www.facebook.com/indiawaterproofing",
+          "https://www.instagram.com/indiawaterproofing",
+        ],
+        priceRange: "₹25-₹80 per sq ft",
+        currenciesAccepted: "INR",
+        paymentAccepted: "Cash, UPI, Bank Transfer, Credit Card",
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            opens: "08:00",
+            closes: "20:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Sunday",
+            opens: "10:00",
+            closes: "18:00",
+            description: "Emergency only",
+          },
+        ],
+        serviceArea: {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: 22.3072,
+            longitude: 73.1812,
+          },
+          geoRadius: "200000",
+        },
+        areaServed: [
+          { "@type": "City", name: "Vadodara" },
+          { "@type": "City", name: "Ahmedabad" },
+          { "@type": "City", name: "Surat" },
+          { "@type": "City", name: "Anand" },
+          { "@type": "City", name: "Nadiad" },
+          { "@type": "City", name: "Bharuch" },
+          { "@type": "City", name: "Gandhinagar" },
+          { "@type": "City", name: "Godhra" },
+          { "@type": "State", name: "Gujarat" },
+        ],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "527",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        review: [
+          {
+            "@type": "Review",
+            reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+            author: { "@type": "Person", name: "Rajesh Patel" },
+            reviewBody: "Best waterproofing service in Vadodara. They fixed my terrace leakage permanently. 10-year warranty and excellent work quality.",
+            datePublished: "2025-08-15",
+          },
+          {
+            "@type": "Review",
+            reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+            author: { "@type": "Person", name: "Priya Sharma" },
+            reviewBody: "Professional basement waterproofing done for our commercial building. Great materials, on-time completion, and reasonable pricing.",
+            datePublished: "2025-10-22",
+          },
+        ],
       },
+      // === Service Schema with OfferCatalog ===
       {
         "@type": "Service",
-        "@id": "https://localseoservices.com/#service-localseo",
-        name: "Local SEO Services",
-        description: "Complete local SEO package including website SEO, local citations, backlink building, and Google Maps ranking. 30-day guarantee.",
+        "@id": "https://waterproofingvadodara.com/#service-waterproofing",
+        name: "Waterproofing Services",
+        description: "Complete waterproofing solutions including terrace, roof, basement, bathroom, wall waterproofing with up to 10-year warranty. Serving Vadodara and nearby cities within 200 km.",
         provider: {
-          "@id": "https://localseoservices.com/#organization",
+          "@id": "https://waterproofingvadodara.com/#organization",
         },
-        areaServed: "India",
+        areaServed: {
+          "@type": "State",
+          name: "Gujarat",
+          containedInPlace: { "@type": "Country", name: "India" },
+        },
+        serviceType: "Waterproofing",
+        termsOfService: "https://waterproofingvadodara.com/terms",
         offers: {
-          "@type": "Offer",
-          price: "25000",
+          "@type": "AggregateOffer",
+          lowPrice: "25",
+          highPrice: "80",
           priceCurrency: "INR",
-          description: "One-time Local SEO package - Pay after ranking - 30 day guarantee",
+          unitText: "per sq ft",
+          offerCount: "8",
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Waterproofing Services",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Terrace Waterproofing", url: "https://waterproofingvadodara.com/terrace-waterproofing-vadodara" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Roof Waterproofing", url: "https://waterproofingvadodara.com/roof-waterproofing-vadodara" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Basement Waterproofing", url: "https://waterproofingvadodara.com/basement-waterproofing-vadodara" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bathroom Waterproofing", url: "https://waterproofingvadodara.com/bathroom-waterproofing-vadodara" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wall Waterproofing", url: "https://waterproofingvadodara.com/wall-waterproofing-vadodara" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Injection Grouting", url: "https://waterproofingvadodara.com/injection-grouting-vadodara" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dampness Treatment", url: "https://waterproofingvadodara.com/dampness-treatment-vadodara" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seepage Treatment", url: "https://waterproofingvadodara.com/seepage-treatment-vadodara" } },
+          ],
         },
       },
+      // === BreadcrumbList for Homepage ===
       {
-        "@type": "AggregateRating",
-        "@id": "https://localseoservices.com/#rating",
-        itemReviewed: {
-          "@type": "LocalBusiness",
-          "@id": "https://localseoservices.com/#organization",
-        },
-        ratingValue: "4.9",
-        ratingCount: "50",
-        bestRating: "5",
-        worstRating: "1",
+        "@type": "BreadcrumbList",
+        "@id": "https://waterproofingvadodara.com/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://waterproofingvadodara.com",
+          },
+        ],
+      },
+      // === WebPage for Homepage ===
+      {
+        "@type": "WebPage",
+        "@id": "https://waterproofingvadodara.com/#webpage",
+        url: "https://waterproofingvadodara.com",
+        name: "#1 Waterproofing in Vadodara 2026 | ₹25/sqft | 10-Year Warranty",
+        isPartOf: { "@id": "https://waterproofingvadodara.com/#website" },
+        about: { "@id": "https://waterproofingvadodara.com/#organization" },
+        breadcrumb: { "@id": "https://waterproofingvadodara.com/#breadcrumb" },
+        inLanguage: "en-IN",
+        datePublished: "2025-01-01",
+        dateModified: "2026-02-16",
+        description: "Vadodara's most trusted waterproofing company. Terrace, roof, basement, bathroom waterproofing. ₹25-80/sqft. 10-year warranty. 500+ projects. Free inspection.",
       },
     ],
   }

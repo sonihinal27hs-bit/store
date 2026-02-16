@@ -1,13 +1,11 @@
-import { HeroSection } from "@/components/hero-section"
-import { WhoIsThisForSection } from "@/components/who-is-this-for-section"
-import { BenefitsSection } from "@/components/benefits-section"
-import { WhatWeDoSection } from "@/components/what-we-do-section"
-import { PricingSection } from "@/components/pricing-section"
-import { WhyDifferentSection } from "@/components/why-different-section"
-import { ResultsSection } from "@/components/results-section"
-import { TrustSection } from "@/components/trust-section"
-import { FAQSection } from "@/components/faq-section"
-import { FinalCTASection } from "@/components/final-cta-section"
+import { WaterproofingHero } from "@/components/waterproofing-hero"
+import { ServicesSection } from "@/components/waterproofing-services"
+import { ImageGallery } from "@/components/image-gallery"
+import { ServiceAreasSection } from "@/components/service-areas-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { WaterproofingFAQ } from "@/components/waterproofing-faq"
+import { WaterproofingContactForm } from "@/components/waterproofing-contact-form"
+import { WaterproofingCTA } from "@/components/waterproofing-cta"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
@@ -16,16 +14,14 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navigation />
-      <HeroSection />
-      <WhoIsThisForSection />
-      <BenefitsSection />
-      <WhatWeDoSection />
-      <PricingSection />
-      <WhyDifferentSection />
-      <ResultsSection />
-      <TrustSection />
-      <FAQSection />
-      <FinalCTASection />
+      <WaterproofingHero />
+      <ServicesSection />
+      <ImageGallery />
+      <ServiceAreasSection />
+      <TestimonialsSection />
+      <WaterproofingCTA />
+      <WaterproofingFAQ />
+      <WaterproofingContactForm />
       <Footer />
       <WhatsAppFloat />
     </main>
