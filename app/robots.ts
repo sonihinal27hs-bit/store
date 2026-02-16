@@ -8,13 +8,8 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/leads"],
       },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/leads"],
-      },
     ],
-    sitemap: "https://waterproofingvadodara.com/sitemap.xml",
-    host: "https://waterproofingvadodara.com",
+    sitemap: "https://store-sigma-lovat.vercel.app/sitemap.xml",
+    host: "https://store-sigma-lovat.vercel.app",
   }
 }
