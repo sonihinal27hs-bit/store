@@ -1,12 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e40af"/>
-      <stop offset="100%" style="stop-color:#0891b2"/>
-    </linearGradient>
-  </defs>
-  <rect width="180" height="180" rx="36" fill="url(#g)"/>
-  <path d="M90 28 C90 28 50 78 50 104 C50 126 68 144 90 144 C112 144 130 126 130 104 C130 78 90 28 90 28Z" fill="white" opacity="0.95"/>
-  <path d="M90 55 C90 55 68 90 68 104 C68 116 78 126 90 126 C102 126 112 116 112 104 C112 90 90 55 90 55Z" fill="url(#g)" opacity="0.3"/>
-  <path d="M78 96 Q84 84 93 96 Q102 108 84 113" stroke="white" stroke-width="4" fill="none" opacity="0.5"/>
+  <!-- Shree Ganesh Jewellers — Apple Touch Icon -->
+  <rect width="180" height="180" rx="36" fill="#1a1a1a"/>
+  <!-- Decorative ring -->
+  <circle cx="90" cy="90" r="72" fill="none" stroke="#b8860b" stroke-width="2" opacity="0.3"/>
+  <circle cx="90" cy="90" r="66" fill="#b8860b" opacity="0.04"/>
+  <!-- Ganesh face -->
+  <!-- Head -->
+  <ellipse cx="90" cy="75" rx="28" ry="32" fill="none" stroke="#d4af37" stroke-width="3"/>
+  <!-- Ears -->
+  <path d="M62 70 C52 56 54 36 64 32 C72 29 74 38 73 48" fill="none" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M118 70 C128 56 126 36 116 32 C108 29 106 38 107 48" fill="none" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="80" cy="68" r="3.5" fill="#d4af37"/>
+  <circle cx="100" cy="68" r="3.5" fill="#d4af37"/>
+  <!-- Crown / Tilak -->
+  <circle cx="90" cy="50" r="4.5" fill="#d4af37"/>
+  <path d="M83 50 L90 38 L97 50" fill="none" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Trunk -->
+  <path d="M90 92 C90 102 84 116 78 126 C74 132 78 134 82 130 C86 126 90 118 90 108" fill="none" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Tusks -->
+  <path d="M82 88 L80 96" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+  <path d="M98 88 L100 96" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+  <!-- Om -->
+  <text x="78" y="162" font-family="Georgia, serif" font-size="22" fill="#d4af37" opacity="0.4">ॐ</text>
+  <!-- Corner dots -->
+  <circle cx="90" cy="20" r="2.5" fill="#d4af37" opacity="0.4"/>
+  <circle cx="90" cy="160" r="2.5" fill="#d4af37" opacity="0.4"/>
+  <circle cx="20" cy="90" r="2.5" fill="#d4af37" opacity="0.4"/>
+  <circle cx="160" cy="90" r="2.5" fill="#d4af37" opacity="0.4"/>
 </svg>
