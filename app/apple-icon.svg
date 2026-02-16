@@ -1,5 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
-  <rect width="180" height="180" rx="40" fill="#1e3a5f"/>
-  <path d="M45 112L79 78L101 100L135 56" stroke="#22c55e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M112 56H135V79" stroke="#22c55e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <!-- Shree Ganesh Jewellers — Apple Touch Icon -->
+  <rect width="180" height="180" rx="40" fill="#1a1a1a"/>
+  <!-- Decorative ring -->
+  <circle cx="90" cy="90" r="73" fill="none" stroke="#b8860b" stroke-width="4" opacity="0.4"/>
+  <!-- Ganesh head -->
+  <ellipse cx="90" cy="73" rx="31" ry="34" fill="none" stroke="#d4af37" stroke-width="6"/>
+  <!-- Ears -->
+  <path d="M59 67 C48 50 50 31 64 28 C75 25 79 37 76 50" fill="none" stroke="#d4af37" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M121 67 C132 50 130 31 116 28 C105 25 101 37 104 50" fill="none" stroke="#d4af37" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="79" cy="65" r="4.5" fill="#d4af37"/>
+  <circle cx="101" cy="65" r="4.5" fill="#d4af37"/>
+  <!-- Crown dot -->
+  <circle cx="90" cy="45" r="5.5" fill="#d4af37"/>
+  <!-- Trunk -->
+  <path d="M90 96 C90 107 82 121 73 132 C68 140 73 143 79 138 C84 130 90 118 90 107" fill="none" stroke="#d4af37" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- Tusks -->
+  <path d="M82 90 L79 101" stroke="#d4af37" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M98 90 L101 101" stroke="#d4af37" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Om -->
+  <text x="76" y="170" font-family="Georgia, serif" font-size="28" fill="#d4af37" opacity="0.5">ॐ</text>
 </svg>
